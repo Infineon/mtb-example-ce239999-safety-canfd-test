@@ -48,7 +48,6 @@
 #include "cybsp.h"
 #include "cy_retarget_io.h"
 #include "SelfTest.h"
-#include "stdio_user.h"
 #include <stdio.h>
 
 #define MAX_INDEX_VAL 0xFFF0u
@@ -117,7 +116,7 @@ int main(void)
         /*******************************/
         /* Run Program Counter Test... */
         /*******************************/
-        if(OK_STATUS != SelfTest_CANFD(CANFD_HW, can_channel, &CANFD_config, &context, STL_CANFD_TEST_MODE_INTERNAL_LOOP_BACK))
+        if(OK_STATUS != SelfTest_CANFD(CANFD_HW, can_channel, &CANFD_config, &context, CY_CANFD_TEST_MODE_INTERNAL_LOOP_BACK))
         {
             printf("Error: CANFD\r\n");
             while (1)
